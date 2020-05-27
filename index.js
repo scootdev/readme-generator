@@ -30,6 +30,40 @@ const questions = [
         name: "usage",
         message: "How would someone use the application?"
     },
+    {
+        type: "list",
+        name: "license",
+        message: "Choose the licensing for this application",
+        choices: [
+            "ISC",
+            "Apache License 2.0",
+            "MIT",
+            "GNU GPLv3",
+            "Other"
+        ]
+    },
+    {
+        type: "input",
+        name: "license",
+        message: "What other license do you want to use?",
+        when: (answers) => answers.license === "Other"
+    },
+    {
+        type: "confirm",
+        name: "contribNeeded",
+        message: "Do we need contribution guidelines?"
+    },
+    {
+        type: "input",
+        name: "contrib",
+        message: "What are the contribution guidelines?",
+        when: (answers) => answers.contribNeeded === true
+    },
+    {
+        type: "input",
+        name: "tests",
+        message: "How can someone test the application?"
+    },
 ];
 
 function writeToFile(fileName, data) {
