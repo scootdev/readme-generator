@@ -15,15 +15,9 @@ const questions = [
         message: "Write a short description of the application..."
     },
     {
-        type: "confirm",
-        name: "installNeeded",
-        message: "Do we need installation instructions?"
-    },
-    {
         type: "input",
         name: "install",
         message: "What are the install instructions?",
-        when: (answers) => answers.installNeeded === true
     },
     {
         type: "input",
@@ -49,15 +43,9 @@ const questions = [
         when: (answers) => answers.license === "Other"
     },
     {
-        type: "confirm",
-        name: "contribNeeded",
-        message: "Do we need contribution guidelines?"
-    },
-    {
         type: "input",
         name: "contrib",
         message: "What are the contribution guidelines?",
-        when: (answers) => answers.contribNeeded === true
     },
     {
         type: "input",
